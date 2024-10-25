@@ -8,8 +8,27 @@ Clone Your Fork: Clone your forked repository to your local machine.
 git clone https://github.com/sumangal44/C-Projects-Collection.git
  ```
 Create a Branch: Create a new branch for your feature or fix.
-bash
 
++  Folder Structure
+```code
+C-Projects-Collection/
+│
+├── Project1_Name/
+│   ├── src/                # Source code files
+│   ├── include/            # Header files
+│   ├── tests/              # Unit tests (if applicable)
+│   ├── README.md           # Project documentation
+│   └── Makefile            # Build in
+```
++ Folder Structure Explanation
+```code
++ C-Projects-Collection/: The root directory for all your projects.
++ ProjectX_Name/: Each project has its own folder, named descriptively.
++ src/: Contains the main source code files for the project.
++ include/: Contains any header files needed for the project.
++ tests/: Contains any unit tests for the project, helping beginners understand how to test their code.
++ README.md: Each project folder should include its own README file with project-specific information (how to compile, run, etc.).
+```
 ```bash
 git checkout -b feature/your-feature-name
 ```
