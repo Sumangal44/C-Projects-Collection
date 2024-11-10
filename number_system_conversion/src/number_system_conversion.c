@@ -11,6 +11,28 @@
 #define BLUE    "\033[34m"
 #define MAGENTA "\033[35m"
 #define CYAN    "\033[36m"
+#define WHITE   "\033[37m"
+#define BLACK   "\033[30m"
+#define BOLDBLACK   "\033[1m\033[30m"
+#define BOLDRED     "\033[1m\033[31m"
+#define BOLDGREEN   "\033[1m\033[32m"
+#define BOLDYELLOW  "\033[1m\033[33m"
+#define BOLDBLUE    "\033[1m\033[34m"
+#define BOLDMAGENTA "\033[1m\033[35m"
+#define BOLDCYAN    "\033[1m\033[36m"
+#define BOLDWHITE   "\033[1m\033[37m"
+
+// Function for print colorfull banner
+void printBanner() {
+    printf(BLUE "*************************************\n" RESET);
+    printf(MAGENTA "*      NUMBER SYSTEM CONVERSION     *\n" RESET);
+    printf(MAGENTA "*        Made in C Language         *\n" RESET);
+    printf(MAGENTA "*        By: [sumangal karan]       *\n" RESET);
+    printf(BLUE "*************************************\n" RESET);
+} 
+
+
+
 
 // Function to convert decimal to binary
 int decimalToBinary(int decimal) {
@@ -79,7 +101,7 @@ void decimalToHexadecimal(int decimal) {
         i++;
     }
     
-    printf("Hexadecimal: ");
+    printf(BOLDCYAN "Hexadecimal: " RESET);
     for (int j = i - 1; j >= 0; j--)
         printf("%c", hexadecimal[j]);
     printf("\n");
@@ -105,113 +127,112 @@ int hexadecimalToDecimal(char hexadecimal[]) {
 int main() {
     int choice, decimal, binary, octal;
     char hexadecimal[100];
-    
-    printf("\nNumber System Conversion Menu:\n");
-    printf("1. Decimal to Binary\n");
+    printBanner();
+    printf(BOLDGREEN "\nNumber System Conversion Menu:\n" RESET);
+    printf(BOLDYELLOW"1. Decimal to Binary\n");
     printf("2. Binary to Decimal\n");
     printf("3. Decimal to Octal\n");
     printf("4. Octal to Decimal\n");
     printf("5. Decimal to Hexadecimal\n");
     printf("6. Hexadecimal to Decimal\n");
-
     printf("7. Binary to Octal\n");
     printf("8. Binary to Hexadecimal\n");
     printf("9. Octal to Binary\n");
     printf("10. Octal to Hexadecimal\n");
     printf("11. Hexadecimal to Binary\n");
-    printf("12. Hexadecimal to Octal\n");
-    printf("13. Exit\n");
-    
+    printf("12. Hexadecimal to Octal\n" RESET);
+    printf(BOLDRED"13. Exit\n" RESET);
+     
     do {
 
-        printf("\nEnter your choice (1-13): ");
+        printf(BOLDGREEN"\nEnter your choice (1-13): " RESET);
         scanf("%d", &choice);
         
         switch(choice) {
             case 1:
-                printf("Enter decimal number: ");
+                printf(BOLDGREEN"Enter decimal number: "RESET);
                 scanf("%d", &decimal);
-                printf("Binary: %d\n", decimalToBinary(decimal));
+                printf(BOLDMAGENTA"Binary: %d\n", decimalToBinary(decimal),RESET);
                 break;
                 
             case 2:
-                printf("Enter binary number: ");
+                printf(BOLDGREEN"Enter binary number: "RESET);
                 scanf("%d", &binary);
-                printf("Decimal: %d\n", binaryToDecimal(binary));
+                printf(BOLDCYAN"Decimal: %d\n", binaryToDecimal(binary),RESET);
                 break;
                 
             case 3:
-                printf("Enter decimal number: ");
+                printf(BOLDGREEN"Enter decimal number: "RESET);
                 scanf("%d", &decimal);
-                printf("Octal: %d\n", decimalToOctal(decimal));
+                printf(BOLDBLUE"Octal: %d\n", decimalToOctal(decimal),RESET);
                 break;
                 
             case 4:
-                printf("Enter octal number: ");
+                printf(BOLDGREEN"Enter octal number: "RESET);
                 scanf("%d", &octal);
-                printf("Decimal: %d\n", octalToDecimal(octal));
+                printf(BOLDYELLOW"Decimal: %d\n", octalToDecimal(octal),RESET);
                 break;
                 
             case 5:
-                printf("Enter decimal number: ");
+                printf(BOLDGREEN"Enter decimal number: "RESET);
                 scanf("%d", &decimal);
                 decimalToHexadecimal(decimal);
                 break;
                 
             case 6:
-                printf("Enter hexadecimal number: ");
+                printf(BOLDGREEN"Enter hexadecimal number: "RESET);
                 scanf("%s", hexadecimal);
-                printf("Decimal: %d\n", hexadecimalToDecimal(hexadecimal));
+                printf(BOLDCYAN"Decimal: %d\n", hexadecimalToDecimal(hexadecimal),RESET);
                 break;
                 
             case 7:
-                printf("Enter binary number: ");
+                printf(BOLDGREEN"Enter binary number: "RESET);
                 scanf("%d", &binary);
                 decimal = binaryToDecimal(binary);
-                printf("Octal: %d\n", decimalToOctal(decimal));
+                printf(BOLDMAGENTA"Octal: %d\n", decimalToOctal(decimal),RESET);
                 break;
                 
             case 8:
-                printf("Enter binary number: ");
+                printf(BOLDGREEN"Enter binary number: "RESET);
                 scanf("%d", &binary);
                 decimal = binaryToDecimal(binary);
                 decimalToHexadecimal(decimal);
                 break;
                 
             case 9:
-                printf("Enter octal number: ");
+                printf(BOLDGREEN"Enter octal number: "RESET);
                 scanf("%d", &octal);
                 decimal = octalToDecimal(octal);
-                printf("Binary: %d\n", decimalToBinary(decimal));
+                printf(BOLDBLUE"Binary: %d\n", decimalToBinary(decimal),RESET);
                 break;
                 
             case 10:
-                printf("Enter octal number: ");
+                printf(BOLDGREEN"Enter octal number: "RESET);
                 scanf("%d", &octal);
                 decimal = octalToDecimal(octal);
                 decimalToHexadecimal(decimal);
                 break;
                 
             case 11:
-                printf("Enter hexadecimal number: ");
-                scanf("%s", hexadecimal);
+                printf(BOLDGREEN"Enter hexadecimal number: "RESET);
+                scanf("%s", &hexadecimal);
                 decimal = hexadecimalToDecimal(hexadecimal);
-                printf("Binary: %d\n", decimalToBinary(decimal));
+                printf(BOLDMAGENTA"Binary: %d\n", decimalToBinary(decimal),RESET);
                 break;
                 
             case 12:
-                printf("Enter hexadecimal number: ");
-                scanf("%s", hexadecimal);
+                printf(BOLDGREEN"Enter hexadecimal number: "RESET);
+                scanf("%s", &hexadecimal);
                 decimal = hexadecimalToDecimal(hexadecimal);
-                printf("Octal: %d\n", decimalToOctal(decimal));
+                printf(BOLDBLUE"Octal: %d\n", decimalToOctal(decimal),RESET);
                 break;
                 
             case 13:
-                printf("Exiting program.\n");
+                printf(BOLDRED"Exiting program.......\n" RESET);
                 break;
                 
             default:
-                printf("Invalid choice! Please try again.\n");
+                printf(BOLDYELLOW"Invalid choice! Please try again.\n"RESET);
         }
 
     } while (choice != 13);
